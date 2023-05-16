@@ -9,4 +9,12 @@ public class SnakeFood extends Sprite{
     public SnakeFood(int x, int y, int width, int height) {
         super(x, y, width, height);
     }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
 }

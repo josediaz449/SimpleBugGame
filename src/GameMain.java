@@ -1,8 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class Main extends JFrame {
-    public Main() {
+public class GameMain extends JFrame {
+    public GameMain() {
 
         initUI();
     }
@@ -22,7 +22,7 @@ public class Main extends JFrame {
     public static void main(String[] args) {
 
         EventQueue.invokeLater(() -> {
-            JFrame ex = new Main();
+            JFrame ex = new GameMain();
             ex.setVisible(true);
         });
     }

@@ -26,7 +26,7 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
 
     private void initBoard() {
 
-        //setBackground(Color.BLACK);
+        setBackground(Color.BLACK);
         setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
         addKeyListener(new TAdapter());
         setFocusable(true);
@@ -54,36 +54,25 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
     }
 
     private void drawSnake(Graphics g) {
-
-        //g.fillOval((int)circle.getX(),(int)circle.getY(),20,20);
-        for(Sprite snakePiece : snake.getSnake()){
-            g.fillOval((int)snakePiece.getX(),(int)snakePiece.getY(),20,20);
+        for(SnakePiece snakePiece : snake.getSnake()){
+            g.setColor(snakePiece.getColor());
+            g.fillOval(snakePiece.getX(),snakePiece.getY(),20,20);
             Toolkit.getDefaultToolkit().sync();
-            //Graphics2D graphics2D = new Graphics()
         }
-        //Toolkit.getDefaultToolkit().sync();
     }
 
     private void cycle() {
-
-        //x += 1;
-        //y += 1;
-        //circle.move();
         for(SnakePiece snakePiece:snake.getSnake()){
             snakePiece.move();
 
         }
+        /*
         if(snake.getSnake().getFirst().getY()==0){
             //snake.getSnake().getFirst().setY(INITIAL_Y);
             //snake.getSnake().getFirst().setY(INITIAL_Y);
             //snake.getSnake().add(new SnakePiece(snake.getSnake().getLast().getX(), snake.getSnake().getLast().getY()+20,20,20));
         }
-        /*
-        if (circle.getY() < -25) {
-
-            circle.setY(INITIAL_Y);
-            circle.setX(INITIAL_X);
-        }*/
+        */
     }
 
     @Override
@@ -130,7 +119,6 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
             for (SnakePiece snakePiece : snake.getSnake()) {
                 snakePiece.keyPressed(e);
             }
-            //sn.keyPressed(e);
         }
     }
 }
