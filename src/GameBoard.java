@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -13,11 +14,13 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
     private final int INITIAL_X = 200;
     private final int INITIAL_Y = 200;
     private final int DELAY = 25;
+    //private JButton startButton;
 
     private Snake snake;
     private ArrayList<SnakeFood> snakeFoods;
     private Thread animator;
     private Random random;
+    //private boolean gameStarted = false;
 
     public GameBoard() {
 
@@ -25,17 +28,11 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
     }
 
     private void initBoard() {
-
         setBackground(Color.BLACK);
         setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
         addKeyListener(new TAdapter());
         setFocusable(true);
-
-        //loadImage();
         snake = new Snake();
-
-        //x = INITIAL_X;
-        //y = INITIAL_Y;
     }
 
     @Override
@@ -66,13 +63,25 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
             snakePiece.move();
 
         }
-        /*
-        if(snake.getSnake().getFirst().getY()==0){
-            //snake.getSnake().getFirst().setY(INITIAL_Y);
-            //snake.getSnake().getFirst().setY(INITIAL_Y);
-            //snake.getSnake().add(new SnakePiece(snake.getSnake().getLast().getX(), snake.getSnake().getLast().getY()+20,20,20));
+
+        if(snake.getSnake().getFirst().getBounds().getMinY()==0) {
+            snake.getSnake().getFirst().setDy(2);
+            snake.getSnake().getFirst().setDx(0);
         }
-        */
+        if(snake.getSnake().getFirst().getBounds().getMaxY()==400) {
+            snake.getSnake().getFirst().setDy(-2);
+            snake.getSnake().getFirst().setDx(0);
+        }
+        if(snake.getSnake().getFirst().getBounds().getMinX()==0) {
+            snake.getSnake().getFirst().setDy(0);
+            snake.getSnake().getFirst().setDx(2);
+        }
+        if(snake.getSnake().getFirst().getBounds().getMaxX()==400) {
+            snake.getSnake().getFirst().setDy(0);
+            snake.getSnake().getFirst().setDx(-2);
+        }
+
+
     }
 
     @Override
@@ -110,7 +119,7 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        e.notify();
+        //e.notify();
     }
     private class TAdapter extends KeyAdapter {
 
