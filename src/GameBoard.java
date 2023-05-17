@@ -18,8 +18,8 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
 
     private Snake snake;
     private ArrayList<SnakeFood> snakeFoods;
+    private SnakeFood snakeFood;
     private Thread animator;
-    private Random random;
     //private boolean gameStarted = false;
 
     public GameBoard() {
@@ -32,7 +32,9 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
         setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
         addKeyListener(new TAdapter());
         setFocusable(true);
+        Random random = new Random(490);
         snake = new Snake();
+        snakeFood = new SnakeFood(random.nextInt(390), random.nextInt(390));
     }
 
     @Override
@@ -48,6 +50,7 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
         super.paintComponent(g);
 
         drawSnake(g);
+        drawFood(g);
     }
 
     private void drawSnake(Graphics g) {
@@ -56,6 +59,12 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
             g.fillOval(snakePiece.getX(),snakePiece.getY(),20,20);
             Toolkit.getDefaultToolkit().sync();
         }
+    }
+    private void drawFood(Graphics g){
+        g.setColor(snakeFood.getColor());
+        g.fillRect(snakeFood.getX(), snakeFood.getY(), snakeFood.getWidth(), snakeFood.getHeight());
+        //System.out.println(snakeFood.getX()+", "+snakeFood.getY());
+        Toolkit.getDefaultToolkit().sync();
     }
 
     private void cycle() {
