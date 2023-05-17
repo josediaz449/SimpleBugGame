@@ -89,6 +89,9 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
             snake.getSnake().getFirst().setDy(0);
             snake.getSnake().getFirst().setDx(-2);
         }
+        if (snake.getSnake().getFirst().getBounds().intersects(snakeFood.getBounds())){
+            snakeFood.changeLocation();
+        }
 
 
     }
