@@ -1,2 +1,2 @@
 # SnakeGame
-Classic Sname game created with Java
+Classic Snake game created with Java. 
