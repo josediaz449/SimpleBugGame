@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c364a81e-f5c0-4055-bcbd-f33a907f20ee" name="Changes" comment="Added bounds. Snake now bounces off edges.">
+    <list default="true" id="c364a81e-f5c0-4055-bcbd-f33a907f20ee" name="Changes" comment="Added collision detection to snake food. Snake food changes locations when colliding with snake.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeFood.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +99,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684347770973</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added snake food to gui with random location.">
+      <created>1684348907153</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684348907153</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added collision detection to snake food. Snake food changes locations when colliding with snake.">
+      <created>1684349104456</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684349104456</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,6 +133,8 @@
     <MESSAGE value="Main initiates UI." />
     <MESSAGE value="Cleaned up Code" />
     <MESSAGE value="Added bounds. Snake now bounces off edges." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added bounds. Snake now bounces off edges." />
+    <MESSAGE value="Added snake food to gui with random location." />
+    <MESSAGE value="Added collision detection to snake food. Snake food changes locations when colliding with snake." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added collision detection to snake food. Snake food changes locations when colliding with snake." />
   </component>
 </project>
