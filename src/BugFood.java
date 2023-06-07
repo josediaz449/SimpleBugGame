@@ -1,13 +1,13 @@
 import java.awt.*;
 import java.util.Random;
 
-public class SnakeFood extends Sprite{
+public class BugFood extends Sprite{
     final static private int W = 10;
     final static private int H = 10;
 
     private final Random random;
     private Color color = Color.GREEN;
-    public SnakeFood(int x, int y) {
+    public BugFood(int x, int y) {
         super(x, y, W, H);
         random = new Random();
     }

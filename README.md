@@ -1,2 +1,2 @@
-# SnakeGame
-Classic Snake game created with Java. 
+# SimpleGame
+BugPiece game created with Java. 

@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 
-public class SnakePiece extends Sprite {
+public class Bug extends Sprite {
     private int dx = 0;
     private int dy = -2;
     final static private int W = 20;
@@ -10,37 +10,36 @@ public class SnakePiece extends Sprite {
     private Color color = Color.BLUE;
 
     /*Constructor with parameters*/
-    public SnakePiece(int x, int y) {
+    public Bug(int x, int y) {
         super(x, y, W, H);
     }
     public void move() {
 
-        x += dx;
-        y += dy;
+        super.x += dx;
+        super.y += dy;
     }
-
     public void keyPressed(KeyEvent e) {
 
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_LEFT || key == KeyEvent.VK_A) {
-            dx = -2;
-            dy = 0;
+            setDx(-2);
+            setDy(0);
         }
 
         if (key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_D) {
-            dx = 2;
-            dy = 0;
+            setDx(2);
+            setDy(0);
         }
 
         if (key == KeyEvent.VK_UP || key == KeyEvent.VK_W) {
-            dy = -2;
-            dx = 0;
+            setDx(0);
+            setDy(-2);
         }
 
         if (key == KeyEvent.VK_DOWN || key == KeyEvent.VK_S) {
-            dy = 2;
-            dx = 0;
+            setDx(0);
+            setDy(2);
         }
     }
 
@@ -67,4 +66,5 @@ public class SnakePiece extends Sprite {
     public void setColor(Color color) {
         this.color = color;
     }
+
 }

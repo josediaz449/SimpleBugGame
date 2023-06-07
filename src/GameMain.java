@@ -14,7 +14,7 @@ public class GameMain extends JFrame {
         setResizable(false);
         pack();
 
-        setTitle("MovingCircleWithKeys.Circle");
+        setTitle("Snake Game");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
