@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c364a81e-f5c0-4055-bcbd-f33a907f20ee" name="Changes" comment="Added Listeners for ASWD keys.">
-      <change afterPath="$PROJECT_DIR$/src/BugPiece.java" afterDir="false" />
+    <list default="true" id="c364a81e-f5c0-4055-bcbd-f33a907f20ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SnakeGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleGame.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bug.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Snake.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugFood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakePiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bug.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,19 +54,6 @@
     <configuration name="GameMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameMain" />
       <module name="SimpleGame" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="SimpleGame" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="SimpleGame" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684777135024</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Changed game functionality. Just one bug piece and one food piece. Will speed up game as you eat food.">
+      <created>1686163715957</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1686163715957</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,6 +159,7 @@
     <MESSAGE value="Added snake food to gui with random location." />
     <MESSAGE value="Added collision detection to snake food. Snake food changes locations when colliding with snake." />
     <MESSAGE value="Added Listeners for ASWD keys." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Listeners for ASWD keys." />
+    <MESSAGE value="Changed game functionality. Just one bug piece and one food piece. Will speed up game as you eat food." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed game functionality. Just one bug piece and one food piece. Will speed up game as you eat food." />
   </component>
 </project>

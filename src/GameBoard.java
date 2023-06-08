@@ -4,9 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.util.LinkedList;
 import java.util.Random;
 
 public class GameBoard extends JPanel implements Runnable, ActionListener {
@@ -18,6 +15,7 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
     private BugFood bugFood;
     private Thread animator;
     private Bug bug;
+    private boolean inGame;
 
     public GameBoard() {
 
@@ -32,6 +30,7 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
         Random random = new Random(490);
         bugFood = new BugFood(random.nextInt(390), random.nextInt(390));
         bug = new Bug(INITIAL_X,INITIAL_Y);
+        inGame = true;
     }
 
     @Override
@@ -48,6 +47,20 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
 
         drawBug(g);
         drawFood(g);
+        if (inGame) {
+
+            drawGamePieces(g);
+
+        } else {
+
+            drawGameOver(g);
+        }
+        Toolkit.getDefaultToolkit().sync();
+    }
+
+    private void drawGamePieces(Graphics g) {
+        drawBug(g);
+        drawFood(g);
     }
 
 
@@ -61,27 +74,35 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
         g.fillRect(bugFood.getX(), bugFood.getY(), bugFood.getWidth(), bugFood.getHeight());
         Toolkit.getDefaultToolkit().sync();
     }
+    private void drawGameOver(Graphics g) {
+
+        String msg = "Game Over";
+        Font small = new Font("Helvetica", Font.BOLD, 14);
+        FontMetrics fm = getFontMetrics(small);
+
+        g.setColor(Color.white);
+        g.setFont(small);
+        g.drawString(msg, (B_WIDTH - fm.stringWidth(msg)) / 2,
+                B_HEIGHT / 2);
+    }
 
     private void cycle() {
         bug.move();
 
         if(bug.getBounds().getMinY()==0) {
-            bug.setDy(2);
-            bug.setDx(0);
+            inGame = false;
         }
         if(bug.getBounds().getMaxY()==400) {
-            bug.setDy(-2);
-            bug.setDx(0);
+            inGame = false;
         }
         if(bug.getBounds().getMinX()==0) {
-            bug.setDy(0);
-            bug.setDx(2);
+            inGame = false;;
         }
         if(bug.getBounds().getMaxX()==400) {
-            bug.setDy(0);
-            bug.setDx(-2);
+            inGame = false;
         }
         if (bug.getBounds().intersects(bugFood.getBounds())){
+            bug.setSpeedMultiplier((float) (bug.getSpeedMultiplier()+0.1));
             bugFood.changeLocation();
         }
 
@@ -95,7 +116,7 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
 
         beforeTime = System.currentTimeMillis();
 
-        while (true) {
+        while (inGame) {
 
             cycle();
             repaint();

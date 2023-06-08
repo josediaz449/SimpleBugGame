@@ -8,6 +8,7 @@ public class Bug extends Sprite {
     final static private int W = 20;
     final static private int H = 20;
     private Color color = Color.BLUE;
+    private float speedMultiplier = 1;
 
     /*Constructor with parameters*/
     public Bug(int x, int y) {
@@ -15,8 +16,8 @@ public class Bug extends Sprite {
     }
     public void move() {
 
-        super.x += dx;
-        super.y += dy;
+        x += (dx*speedMultiplier);
+        y += (dy*speedMultiplier);
     }
     public void keyPressed(KeyEvent e) {
 
@@ -65,6 +66,12 @@ public class Bug extends Sprite {
 
     public void setColor(Color color) {
         this.color = color;
+    }
+    public float getSpeedMultiplier() {
+        return speedMultiplier;
+    }
+    public void setSpeedMultiplier(float speedMultiplier) {
+        this.speedMultiplier = speedMultiplier;
     }
 
 }
