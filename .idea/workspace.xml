@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c364a81e-f5c0-4055-bcbd-f33a907f20ee" name="Changes" comment="">
+    <list default="true" id="c364a81e-f5c0-4055-bcbd-f33a907f20ee" name="Changes" comment="Added Game over functionality.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bug.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686163715957</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added Game over functionality.">
+      <created>1686249164323</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686249164323</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,6 +166,7 @@
     <MESSAGE value="Added collision detection to snake food. Snake food changes locations when colliding with snake." />
     <MESSAGE value="Added Listeners for ASWD keys." />
     <MESSAGE value="Changed game functionality. Just one bug piece and one food piece. Will speed up game as you eat food." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed game functionality. Just one bug piece and one food piece. Will speed up game as you eat food." />
+    <MESSAGE value="Added Game over functionality." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Game over functionality." />
   </component>
 </project>

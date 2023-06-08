@@ -16,6 +16,7 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
     private Thread animator;
     private Bug bug;
     private boolean inGame;
+    public static int score = 0;
 
     public GameBoard() {
 
@@ -29,8 +30,10 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
         setFocusable(true);
         Random random = new Random(490);
         bugFood = new BugFood(random.nextInt(390), random.nextInt(390));
-        bug = new Bug(INITIAL_X,INITIAL_Y);
+        bug = new Bug(INITIAL_X,INITIAL_Y);;
         inGame = true;
+
+
     }
 
     @Override
@@ -44,9 +47,6 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-
-        drawBug(g);
-        drawFood(g);
         if (inGame) {
 
             drawGamePieces(g);
@@ -73,10 +73,11 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
         g.setColor(bugFood.getColor());
         g.fillRect(bugFood.getX(), bugFood.getY(), bugFood.getWidth(), bugFood.getHeight());
         Toolkit.getDefaultToolkit().sync();
+
     }
     private void drawGameOver(Graphics g) {
 
-        String msg = "Game Over";
+        String msg = "Game Over. Score: "+score;
         Font small = new Font("Helvetica", Font.BOLD, 14);
         FontMetrics fm = getFontMetrics(small);
 
@@ -89,19 +90,20 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
     private void cycle() {
         bug.move();
 
-        if(bug.getBounds().getMinY()==0) {
+        if(bug.getBounds().getMinY()<=0) {
             inGame = false;
         }
-        if(bug.getBounds().getMaxY()==400) {
+        if(bug.getBounds().getMaxY()>=400) {
             inGame = false;
         }
-        if(bug.getBounds().getMinX()==0) {
+        if(bug.getBounds().getMinX()<=0) {
             inGame = false;;
         }
-        if(bug.getBounds().getMaxX()==400) {
+        if(bug.getBounds().getMaxX()>=400) {
             inGame = false;
         }
         if (bug.getBounds().intersects(bugFood.getBounds())){
+            score+=1;
             bug.setSpeedMultiplier((float) (bug.getSpeedMultiplier()+0.1));
             bugFood.changeLocation();
         }
