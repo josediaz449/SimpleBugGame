@@ -3,27 +3,27 @@ import java.awt.*;
 
 public class GameMain extends JFrame {
     public GameMain() {
-
         initUI();
     }
 
     private void initUI() {
 
         add(new GameBoard());
+        setFrameSettings();
+    }
 
+    private void setFrameSettings() {
         setResizable(false);
         pack();
-
-        setTitle("Snake Game");
+        setTitle("Bug Game");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     public static void main(String[] args) {
-
         EventQueue.invokeLater(() -> {
-            JFrame ex = new GameMain();
-            ex.setVisible(true);
+            JFrame gameFrame = new GameMain();
+            gameFrame.setVisible(true);
         });
     }
 }

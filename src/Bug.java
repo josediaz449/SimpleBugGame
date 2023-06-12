@@ -7,20 +7,16 @@ public class Bug extends Sprite {
     private int dy = -2;
     final static private int W = 20;
     final static private int H = 20;
-    private Color color = Color.BLUE;
+    final private Color color = Color.BLUE;
     private float speedMultiplier = 1;
-
-    /*Constructor with parameters*/
     public Bug(int x, int y) {
         super(x, y, W, H);
     }
     public void move() {
-
         x += (dx*speedMultiplier);
         y += (dy*speedMultiplier);
     }
     public void keyPressed(KeyEvent e) {
-
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_LEFT || key == KeyEvent.VK_A) {
@@ -62,10 +58,6 @@ public class Bug extends Sprite {
 
     public Color getColor() {
         return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
     }
     public float getSpeedMultiplier() {
         return speedMultiplier;

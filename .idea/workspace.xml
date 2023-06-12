@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c364a81e-f5c0-4055-bcbd-f33a907f20ee" name="Changes" comment="Added Game over functionality.">
+    <list default="true" id="c364a81e-f5c0-4055-bcbd-f33a907f20ee" name="Changes" comment="Added better boundary recognition and score system.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugPiece.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686249164323</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added better boundary recognition and score system.">
+      <created>1686251611631</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1686251611631</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,6 +178,7 @@
     <MESSAGE value="Added Listeners for ASWD keys." />
     <MESSAGE value="Changed game functionality. Just one bug piece and one food piece. Will speed up game as you eat food." />
     <MESSAGE value="Added Game over functionality." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Game over functionality." />
+    <MESSAGE value="Added better boundary recognition and score system." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added better boundary recognition and score system." />
   </component>
 </project>

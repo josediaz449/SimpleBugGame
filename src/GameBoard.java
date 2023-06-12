@@ -19,27 +19,31 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
     public static int score = 0;
 
     public GameBoard() {
-
         initBoard();
     }
 
     private void initBoard() {
-        setBackground(Color.BLACK);
-        setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
+        setBoardSettings();
         addKeyListener(new TAdapter());
-        setFocusable(true);
+        initializeVariables();
+    }
+
+    private void initializeVariables() {
         Random random = new Random(490);
         bugFood = new BugFood(random.nextInt(390), random.nextInt(390));
-        bug = new Bug(INITIAL_X,INITIAL_Y);;
+        bug = new Bug(INITIAL_X,INITIAL_Y);
         inGame = true;
+    }
 
-
+    private void setBoardSettings() {
+        setBackground(Color.BLACK);
+        setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
+        setFocusable(true);
     }
 
     @Override
     public void addNotify() {
         super.addNotify();
-
         animator = new Thread(this);
         animator.start();
     }
@@ -48,11 +52,8 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (inGame) {
-
             drawGamePieces(g);
-
         } else {
-
             drawGameOver(g);
         }
         Toolkit.getDefaultToolkit().sync();
@@ -61,9 +62,13 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
     private void drawGamePieces(Graphics g) {
         drawBug(g);
         drawFood(g);
+        drawScore(g);
     }
 
-
+    private static void drawScore(Graphics g) {
+        g.setColor(Color.WHITE);
+        g.drawString("Score: " + score, 5, 15);
+    }
     private void drawBug(Graphics g) {
         g.setColor(bug.getColor());
         g.fillOval(bug.getX(),bug.getY(),20,20);
@@ -73,7 +78,6 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
         g.setColor(bugFood.getColor());
         g.fillRect(bugFood.getX(), bugFood.getY(), bugFood.getWidth(), bugFood.getHeight());
         Toolkit.getDefaultToolkit().sync();
-
     }
     private void drawGameOver(Graphics g) {
 
@@ -146,11 +150,9 @@ public class GameBoard extends JPanel implements Runnable, ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
     }
 
     private class TAdapter extends KeyAdapter {
-
         @Override
         public void keyPressed(KeyEvent e) {
             bug.keyPressed(e);

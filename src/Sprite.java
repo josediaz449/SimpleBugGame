@@ -5,7 +5,6 @@ public class Sprite {
     protected int y;
     protected int width;
     protected int height;
-    protected boolean visible;
 
     public Sprite(int x, int y, int width, int height) {
         this.x=x;
@@ -45,14 +44,6 @@ public class Sprite {
 
     public void setHeight(int height) {
         this.height = height;
-    }
-
-    public boolean isVisible() {
-        return visible;
-    }
-
-    public void setVisible(boolean visible) {
-        this.visible = visible;
     }
     public Rectangle getBounds() {
         return new Rectangle(x, y, width, height);
